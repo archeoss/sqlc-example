@@ -1,0 +1,19 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "./internal/db/entities/authors1/sql/query.sql"
+    schema: "./internal/db/entities/authors1/sql/schema.sql"
+    gen:
+      go:
+        package: "authors1"
+        out: "./internal/db/entities/authors1"
+        sql_package: "pgx/v5"
+
+  - engine: "postgresql"
+    queries: "./internal/db/entities/authors2/query.sql"
+    schema: "./internal/db/entities/authors2/schema.sql"
+    gen:
+      go:
+        package: "postgres"
+        out: "./internal/db/entities/authors2/postgres"
+        sql_package: "pgx/v5"
